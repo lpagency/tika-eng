@@ -126,7 +126,7 @@ $(document).on('pjax:end ready', function() {
                     },
                     "info": "",
                     "infoEmpty": "",
-                    "processing": "Cargando...",
+                    "processing": "",
                     "lengthMenu": ""
                 }
             });
