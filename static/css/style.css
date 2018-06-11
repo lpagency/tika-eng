@@ -5,7 +5,15 @@ body{
 
 }
 
-.su-fix{
+.text-tika
+{
+    text-align: center;
+    font-size: 50px;
+    color: #bcbcbc;
+}
+
+.su-fix
+{
     margin-top: -195px;
 }
 

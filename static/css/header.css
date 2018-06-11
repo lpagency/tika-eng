@@ -2,10 +2,10 @@ body{
     font-family: 'Open Sans', sans-serif;
 }
 
-.fa-envelope-o{
-     font-size: 33px;
+.fa-envelope-o
+{
+    font-size: 33px;
     position: relative;
-    top: 6px;
     color: white;
     margin-top: -21px;
 }
