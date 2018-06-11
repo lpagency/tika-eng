@@ -3,9 +3,8 @@ body{
 }
 
 .fa-envelope-o{
-     font-size: 33px;
+    font-size: 33px;
     position: relative;
-    top: 6px;
     color: white;
     margin-top: -21px;
 }
