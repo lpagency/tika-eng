@@ -14,7 +14,7 @@ $(document).ready(function()
         "https://apibodegas.loadingplay.com/",
         "https://apibodegas.loadingplay.com/"
     );
-    var app_public = $.environmentVar(10,10,10);
+    var app_public = $.environmentVar('tika2','tika2','tika2');
 
     var config = {
         'app_public' : app_public,

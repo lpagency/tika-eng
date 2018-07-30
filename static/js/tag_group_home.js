@@ -18,13 +18,13 @@ $(document).ready(function(){
         'helpers': {
                 overlay: {
                     locked: false,
-                    // css: { 
+                    // css: {
                     //     'background': 'url(https://7static.loadingplay.com/static/images/eb91172c27b8ba2f678ac75a371cf33d_BACKGROUND.png) no-repeat center center',
                     //     'background-size':'cover',
                     //     '-moz-background-size': 'cover',
                     //     '-webkit-background-size': 'cover',
                     //     '-o-background-size': 'cover'
-                    //     } 
+                    //     }
                 }
             }
     });
@@ -35,7 +35,7 @@ $(document).ready(function(){
         "https://apibodegas.loadingplay.com/",
         "https://apibodegas.loadingplay.com/"
     );
-    var app_public = $.environmentVar(10,10,10);
+    var app_public = $.environmentVar('tika2','tika2','tika2');
 
     // listado productos
     var config = {
