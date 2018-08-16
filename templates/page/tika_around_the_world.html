@@ -20,14 +20,14 @@
 {% end %}
 
 {% block javascript %}
- <script type="text/javascript" src="{{ site_base }}/static/js/importer_list.js"></script>
+ <script type="text/javascript" src="{{ site_base }}/{{ nocache_static }}/js/importer_list.js"></script>
  <script type="text/javascript">
 
  var stores=[];
 
 var base_url = 'https://apibodegas.loadingplay.com/',
 checkout_url = 'https://pay.loadingplay.com/';
-var app_public = 'tika2';
+var app_public = 'tika';
 
 function isLocalHost() {
     return document.location.href.indexOf('localhost') != -1;
@@ -40,18 +40,18 @@ function isDevelopment() {
 // configure for each enviroment
 if ( isLocalHost() )
 {
-    base_url = 'https://apibodegas.ondev.today/';
+    base_url = 'https://apibodegas.loadingplay.com/';
     checkout_url = 'https://pay.loadingplay.com/';
-    app_public = 'tika2';
+    app_public = 'tika';
     // base_url = 'http://localhost:8520/';
     // checkout_url = 'http://localhost:8522/';
     // app_public= 13;
 }
 else if ( isDevelopment() )
 {
-    base_url = 'https://apibodegas.ondev.today/';
+    base_url = 'https://apibodegas.loadingplay.com/';
     checkout_url = 'https://pay.loadingplay.com/';
-    app_public = 'tika2';
+    app_public = 'tika';
 }
 // $(document).ready(function(){
 //     $.ajax({
@@ -97,7 +97,7 @@ else if ( isDevelopment() )
         <input type="file" class="editableimage" image-id="{{ site.name }}_banner_comprar_im" name="image" id="img_banner_comprar_im" >
     </div>
     {% end %}
-    <img id="{{ site.name }}_banner_comprar_im" src="{{ read_image(site.name + '_banner_comprar_im', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_comprar_im',500) }}'" class="fondo-banner" alt="item">
+    <img id="{{ site.name }}_banner_comprar_im" src="{{ read_image(site.name + '_banner_comprar_im', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_comprar_im') }}'" class="fondo-banner" alt="item">
     <!-- fin editar imagen -->
  <div class="container">
 

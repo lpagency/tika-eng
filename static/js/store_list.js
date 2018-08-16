@@ -29,7 +29,7 @@ $(document).on('pjax:end ready', function() {
     // configure for each enviroment
     if ( isLocalHost() )
     {
-        // base_url = 'https://apibodegas.ondev.today/store/pagination/';
+        // base_url = 'https://apibodegas.loadingplay.com/store/pagination/';
         // checkout_url = 'https://pay.loadingplay.com/';
         // app_public = 'tika';
         base_url = 'http://localhost:8520/store/pagination/';
@@ -38,7 +38,7 @@ $(document).on('pjax:end ready', function() {
     }
     else if ( isDevelopment() )
     {
-        base_url = 'https://apibodegas.ondev.today/store/pagination/';
+        base_url = 'https://apibodegas.loadingplay.com/store/pagination/';
         checkout_url = 'https://pay.loadingplay.com/';
         app_public = 'tika';
     }

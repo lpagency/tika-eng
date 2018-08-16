@@ -1,12 +1,12 @@
 {% extends "../base.html" %}
 
 
-
 {% block header %}
 {% include '../home/header_inside.html' %}
 {% end %}
 
 {% block javascript %}
+
 <script type="text/javascript" src="{{ site_base }}/common/js/bower/file_uploader/dist/fileuploader.js"></script>
 <script type="text/javascript" src="{{ site_base }}/common/js/bower/jquery.cookie/jquery.cookie.js"></script>
 
@@ -17,6 +17,7 @@
         {
             uploadurl : 'https://static.loadingplay.com/image/upload',
             multi: false,
+            support_pdf : true,
             files_supported : '.png|.jpg|.pdf|.doc|.docx'
         });
     });
@@ -41,7 +42,7 @@
                 var asunto = $("#itComentario").val();
 
                 var error_count = 0;
- 
+
                 // --- Condicionales anidados ----
                 //Si nombre está vacío
                 //Muestra el mensaje
@@ -87,23 +88,22 @@
                 {
                     return false;
                 }
- 
+
             });//click
         });//ready
 </script>
 {% end %}
 
 {% block css %}
-<link type="text/css" rel='stylesheet' href="{{ site_base }}/static/css/page.edit.css" />
+<link type="text/css" rel='stylesheet' href="{{ site_base }}/{{ nocache_static }}/css/page.edit.css" />
 <style type="text/css">
     .controls input, .controls textarea
     {
         padding: 10px 16px;
     }
-
-    
 </style>
 {% end %}
+
 
 {% block body %}
 {% if is_admin %}
@@ -124,9 +124,9 @@
         <input type="file" class="editableimage" image-id="{{ site.name }}_banner_contact2" name="image" id="img_banner_contact2" >
         </div>
         {% end %}
-    	<img id="{{ site.name }}_banner_contact2" src="{{ read_image(site.name + '_banner_contact2', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_contact2',500) }}'" class="fondo-form" alt="item">
+    	<img id="{{ site.name }}_banner_contact2" src="{{ read_image(site.name + '_banner_contact2', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_contact2') }}'" class="fondo-form" alt="item">
     <!-- fin editar imagen -->
-    
+
 	 <div class="container" >
        <div class="row">
        		<div class="col-sm-12">
@@ -136,7 +136,7 @@
                 {% else %}
                 <h3 class="description distrib contact" style="text-align:center;"> {{ read_text(site.name + '_texto-contact2') }} </h3>
                 {% end %}
-	            <!-- <p class="description descrip-Form" style="text-align:center;font-style:italic" > 
+	            <!-- <p class="description descrip-Form" style="text-align:center;font-style:italic" >
 	            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 	            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 	            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -146,7 +146,7 @@
                 {% else %}
                 <p class="description descrip-Form contact" style="text-align:center;font-style:italic"> {{ read_text(site.name + '_texto-descrip2') }} </p>
                 {% end %}
-	           
+
 	            <!-- <div class="">Descargar Brochure</div> -->
 	            <!-- <button type="button" class="btn btn-default btn-lg disabled download center-block" style="text-align:center;">Descargar Brochure</button> -->
        		</div>
@@ -177,9 +177,9 @@
 					</div>
 				</div>
 			</div> -->
-			
+
 			<div class="container-fluid contact product text-left container-fluid-magle" style="display: inherit;">
-				<div class="row">		
+				<div class="row">
 					<!-- <div class="col-xs-12 col-sm-4">
 						<address>
 							<br>
@@ -241,50 +241,51 @@
                             </p>
                         </form> -->
                         <div>
-						<form action='https://forms.zohopublic.com/sytes/form/TikaFormularioTikaIngles/formperma/22013a9DfFfd31g910e3AhMJ3/htmlRecords/submit' name='form' method='POST' accept-charset='UTF-8' enctype='multipart/form-data'>
+						<form action='https://forms.zohopublic.com/sytes/form/tikaformulario/formperma/CaJfbdFKj16a6m110D56bd46f/htmlRecords/submit' class="contact-add-form" name='form' method='POST' accept-charset='UTF-8' enctype='multipart/form-data'>
 							<div class="row clearfix">
 								<div class="col-xs-12 col-sm-12">
 								<div class="form-group">
-                                        <label class="control-label"></label>
-                                        <div class=" controls">
-                                            <input name="Name_First" placeholder="Name and surname" class="form-control input-lg requiredField" type="text" id="itNombre" data-error-invalid="Invalid email address" data-error-empty="Ingrese nombre">
+										<label class="control-label"></label>
+										<div class=" controls">
+                                            <input name="Name_First" placeholder="Nombre y apellido" class="form-control input-lg requiredField" type="text" id="itNombre" data-error-invalid="Invalid email address" data-error-empty="Ingrese nombre">
                                         </div>
-                                        <span id="helpBlock2" class="hidden help-block help-nombre">Write your name</span>
-                                    </div>
-									<div class="form-group">
+                                        <span id="helpBlock2" class="hidden help-block help-nombre">Escribe tu nombre</span>
+									</div>
+                                    <div class="form-group">
                                         <label class="control-label"></label>
                                         <div class=" controls">
                                             <input name="Email" placeholder="Email" class="form-control input-lg requiredField" type="email" id="itMail" data-error-invalid="Invalid email address" data-error-empty="Ingrese email">
                                             <input type="hidden" name="subject" value="contactanos" />
                                         </div>
-                                        <span id="helpBlock3" class="hidden help-block help-mail">Enter your Email</span>
+                                        <span id="helpBlock3" class="hidden help-block help-mail">Escribe tu Email</span>
                                     </div>
-								</div>	
-							</div>	
-							<div class="form-group">
-                                <label class="control-label"></label>
-                                <div class="controls">
-                                    <textarea name="MultiLine" placeholder="Comment" class="form-control input-lg requiredField" id="itComentario" rows="5" data-error-empty="Ingrese mensaje"></textarea>
                                 </div>
-                                <span id="helpBlock4" class="hidden help-block help-comentario">Write your comment</span>
                             </div>
-
+							<div class="form-group">
+								<label class="control-label"></label>
+								<div class="controls">
+                                    <textarea name="MultiLine" placeholder="Comentario" class="form-control input-lg requiredField" id="itComentario" rows="5" data-error-empty="Ingrese mensaje"></textarea>
+                                </div>
+                                <span id="helpBlock4" class="hidden help-block help-comentario">Escribe tu Comentario</span>
+							</div>
 
                             <div class="form-group" >
-                                <label class="control-label">File (pdf or image)</label>
+                                <label class="control-label">Archivo (pdf o imagen)</label>
                                 <input type="file" name="FileUpload" class="imgup-add-input" />
                             </div>
 
 
-							<p><button name="submit" id="bEnviar" type="submit" class="btn btn-store btn-block " data-error-message="Error!" data-sending-message="Sending..." data-ok-message="Email Sent">Submit </button></p>
+							<p><button name="submit" id="bEnviar" type="submit" class="btn btn-store btn-block " data-error-message="Error!" data-sending-message="Sending..." data-ok-message="Email Sent">Enviar </button></p>
 							<input type="hidden" name="submitted" id="submitted3" value="true">
-						</form>	
-					</div>		
-				
-				</div>
+						</form>
+					    </div>
 
-                </div>	
-			</div>
+				    </div>
+
+                </div>
+                </div>
+            </div>
+	</div>
 {% include '../home/footer.html' %}
-			
+
 {% end %}
