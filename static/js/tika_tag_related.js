@@ -46,16 +46,19 @@ $(document).ready(function()
     $('.tika-nuts').ecommerce('product_box', config);
 
     // tika home
-    config.tag = 'tika%20home';
+    config.tag = 'tikas%20home';
     $('.tika-home').ecommerce('product_box', config);
 
     // tika pop
-    config.tag = 'Tika%20pop';
+    config.tag = 'Tika%20Pop';
     $('.tika-pop').ecommerce('product_box', config);
 
     // tika nativas
-    config.tag = 'Tika%20Nativas';
+    config.tag = 'tika_nativa';
     $('.tika-nativas').ecommerce('product_box', config);
 
+    // tika cereal salvaje
+    config.tag = 'tika_cereal_salvaje';
+    $('.tika-cereal-salvaje').ecommerce('product_box', config);
 
 });
