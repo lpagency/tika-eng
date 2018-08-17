@@ -63,6 +63,3 @@ $(document).ready(function()
     config.tag = 'tika_cereal_salvaje';
     $('.tika-cereal-salvaje').ecommerce('product_box', config);
 });
-
-
-
