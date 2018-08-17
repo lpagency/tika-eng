@@ -7,10 +7,11 @@
                 </div>
                 <div class="col-md-4 col-xs-12 text-center">
                     <div class="col-md-6 col-xs-6 ">
-                    <a href="{{ get_config("instagram") }}"> <img class="sociales pull-right"src="https://84static.loadingplay.com/static/images/a4895a2f2337af051356291f722c1f68_instagram.png"> </a>
+                    <a href="{{ get_config("instagram") }}"  target="_blank"> 
+                    <img class="sociales pull-right" src="https://84static.loadingplay.com/static/images/a4895a2f2337af051356291f722c1f68_instagram.png"> </a>
                     </div>
                     <div class="col-md-6 col-xs-6 ">
-                    <a href="{{ get_config("facebook") }}"> <img class="sociales pull-left" src="https://7static.loadingplay.com/static/images/4df0b24d8efd1543103cd9f608d51749_facebook.png"> </a>
+                    <a href="{{ get_config("facebook") }}"  target="_blank"> <img class="sociales pull-left" src="https://7static.loadingplay.com/static/images/4df0b24d8efd1543103cd9f608d51749_facebook.png"> </a>
                     </div>
                 </div>
 
@@ -20,12 +21,12 @@
             <div class="col-md-2 col-xs-10">
                 <div class="text-center text-list">
                     <ul class="no-dot">
-                        <li><a href="{{ site_base }}/productos" class="link-footer {{editabletext}}" text-id="{{ site.name + '_footer_6' }}"> {{ read_text(site.name +  '_footer_6') }}
+                        <li class="link-footer {{editabletext}}" text-id="{{ site.name + '_footer_6' }}"> {{ read_text(site.name +  '_footer_6') }}
                         </a></li> 
-                        <li> <a href="{{ site_base }}/donde_comprar" class="link-footer">Where to buy</a></li> 
-                        <li><a href="{{ site_base }}/nuestra_historia" class="link-footer"> Our History</a></li> 
-                        <li> <a href="{{ site_base }}/recetas" class="link-footer"> Recipes </a></li> 
-                        <li> <a href="{{ site_base }}/contact" class="link-footer {{editabletext}}" text-id="{{ site.name + '_footer_7' }}"> {{ read_text(site.name +  '_footer_7') }}</a></li> 
+                        <li> <a href="{{ site_base }}/where_to_buy" class="link-footer">Where to buy</a></li> 
+                        <li><a href="{{ site_base }}/our_roots" class="link-footer"> Our Roots</a></li> 
+                        <li> <a href="{{ site_base }}/recipes" class="link-footer"> Recipes </a></li> 
+                        <li class="link-footer {{editabletext}}" text-id="{{ site.name + '_footer_7' }}"> {{ read_text(site.name +  '_footer_7') }}</a></li> 
                         <!-- <li class="designed"> <a href="https://www.loadingplay.com/" class="link-footer">Design by Loadingplay</a></li> -->
                     </ul>
                 </div>

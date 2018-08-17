@@ -53,5 +53,9 @@ $(document).ready(function()
     config.tag = 'Tika%20pop';
     $('.tika-pop').ecommerce('product_box', config);
 
+    // tika nativas
+    config.tag = 'Tika%20Nativas';
+    $('.tika-nativas').ecommerce('product_box', config);
+
 
 });

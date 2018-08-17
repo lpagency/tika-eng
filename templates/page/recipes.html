@@ -44,7 +44,7 @@
 {% end %}
 
 {% block javascript %}
-<script type="text/javascript" src="{{ site_base }}/static/js/tika_tag_recipe.js"></script>
+<script type="text/javascript" src="{{ site_base }}/{{ nocache_static }}/js/tika_tag_recipe.js"></script>
  <script type="text/javascript">
      $(document).ajaxComplete(function()
         {
@@ -57,7 +57,7 @@
         });
 
     $(document).ready(function(){
-        // alert('El alto de la resolucion de pantalla es de '+$(window).height()+'pixeles'); 
+        // alert('El alto de la resolucion de pantalla es de '+$(window).height()+'pixeles');
 
     // $(".fancybox").fancybox({
     //     'width':$(window).width(),
@@ -68,13 +68,13 @@
     //     'helpers': {
     //             overlay: {
     //                 locked: false,
-    //                 css: { 
+    //                 css: {
     //                     'background': 'url(https://7static.loadingplay.com/static/images/eb91172c27b8ba2f678ac75a371cf33d_BACKGROUND.png) no-repeat center center',
     //                     'background-size':'cover',
     //                     '-moz-background-size': 'cover',
     //                     '-webkit-background-size': 'cover',
     //                     '-o-background-size': 'cover'
-    //                     } 
+    //                     }
     //             }
     //         }
     //     });
@@ -106,7 +106,7 @@
     </div>
     -->
 
-    <img id="{{ site.name }}_banner_recipe" src="{{ read_image(site.name + '_banner_recipe', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_recipe',500) }}'" class="fondo-banner" alt="item">
+    <img id="{{ site.name }}_banner_recipe" src="{{ read_image(site.name + '_banner_recipe', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_recipe') }}'" class="fondo-banner" alt="item">
     <!-- fin editar imagen -->
     <div class="container">
         <div class="row">
@@ -116,7 +116,7 @@
             </div>
             <div class="row">
                 <div class="col-sm-12">
-                    <p class="description" style="text-align:center;"><span class="{{ editabletext }}" text-id="{{ site.name + '_texto-descrip' }}" >{{ read_text(site.name + '_texto-descrip') }}</span></p>
+                    <div class="description" style="text-align:center;"><span class="{{ editabletext }}" text-id="{{ site.name + '_texto-descrip' }}" >{{ read_text(site.name + '_texto-descrip') }}</span></div>
                 </div>
             </div>
         </div>
@@ -134,8 +134,8 @@
     <div class="container-fluid tik"></div>
     <div class="container" style="padding-top:20px">
         <div class="row dips-recipe">
-             
-        </div> 
+
+        </div>
     </div>
     <div class="">
         <div id="recetas_mastikas" class="position-link"> </div>
@@ -149,8 +149,8 @@
     <div class="container-fluid tik"></div>
     <div class="container" style="padding-top:20px">
         <div class="row pasta-recipes">
-            
-        </div> 
+
+        </div>
     </div>
     <div class="container">
         <div id="recetas_nuts" class="position-link"> </div>
@@ -164,8 +164,8 @@
     <div class="container-fluid tik"></div>
     <div class="container" style="padding-top:20px">
         <div class="row nuts-recipes">
-             
-        </div> 
+
+        </div>
     </div>
     <div class="container bor">
         <div id="otras_recetas" class="position-link"> </div>
@@ -179,8 +179,8 @@
     <div class="container-fluid tik"></div>
     <div class="container" style="padding-top:20px">
         <div class="row other-recipes">
-           
-        </div> 
+
+        </div>
     </div>
     <div class="space50"></div>
     {% include '../home/footer.html' %}

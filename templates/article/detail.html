@@ -3,8 +3,8 @@
     {{ site.name }}
 {% end %}
 {% block scripts %}
-    <script type="text/javascript" src="{{ site_base }}/static/js/plugins/jquery.lazyload.js"></script>
-    <script type="text/javascript" src="{{ site_base }}/static/js/imageloader.js" ></script>
+    <script type="text/javascript" src="{{ site_base }}/{{ nocache_static }}/js/plugins/jquery.lazyload.js"></script>
+    <script type="text/javascript" src="{{ site_base }}/{{ nocache_static }}/js/imageloader.js" ></script>
 {% end %}
 {% block header %}
 {% include '../home/inside_header.html' %}
@@ -20,13 +20,13 @@
                                 {{ article["title"] }}
                             </h1>
                             <div class="post-date" style="text-align:left;">
-                                {{ article["creation_date"].strftime("%d %b %Y") }} 
+                                {{ article["creation_date"].strftime("%d %b %Y") }}
                             </div>º
                         </header>
-                        
+
                         <div class="content articulo-text" style="text-align:left;">
                             <div class="col-sm-8 content-picture">
-                                <img src="{{ site_base }}/static/img/0013.png" class="img-responsive lazy" data-original="{{ article["url"] }}" alt="item">
+                                <img src="{{ site_base }}/{{ nocache_static }}/img/0013.png" class="img-responsive lazy" data-original="{{ article["url"] }}" alt="item">
                             </div>
                             <div class="col-sm-4 especial">
                                 <h2 class="h2-art">"{{ article["caption"] }}"

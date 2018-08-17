@@ -3,12 +3,12 @@
     {{ site.name }}
 {% end %}
 {% block scripts %}
-    <script type="text/javascript" src="{{ site_base }}/static/js/plugins/jquery.lazyload.js"></script>
-    <script type="text/javascript" src="{{ site_base }}/static/js/imageloader.js" ></script>
+    <script type="text/javascript" src="{{ site_base }}/{{ nocache_static }}/js/plugins/jquery.lazyload.js"></script>
+    <script type="text/javascript" src="{{ site_base }}/{{ nocache_static }}/js/imageloader.js" ></script>
     <!-- archivos para galería -->
-    <script src="{{ site_base }}/static/js/modernizr.custom.js"></script>
-    <script src="{{ site_base }}/static/js/jquery.instaheader.js"></script>
-    <link href="{{ site_base }}/static/css/jquery.instaheader.css" rel="stylesheet">
+    <script src="{{ site_base }}/{{ nocache_static }}/js/modernizr.custom.js"></script>
+    <script src="{{ site_base }}/{{ nocache_static }}/js/jquery.instaheader.js"></script>
+    <link href="{{ site_base }}/{{ nocache_static }}/css/jquery.instaheader.css" rel="stylesheet">
     <!-- archivos para galería -->
 {% end %}
 {% block header %}
@@ -27,7 +27,7 @@
                             </h1>
                         </header>
                         <div class="post-date" style="text-align:left;">
-                            25 de may 2015 
+                            25 de may 2015
                         </div>
                         <div class="content articulo-text" style="text-align:left;">
                             <div class="col-sm-12" style="margin: 0 auto;float: none;">
@@ -52,7 +52,7 @@
 							       <li class="span3"><a href=""><img src="http://farm4.staticflickr.com/3008/2995262331_d41063a272.jpg" /></a></li>
 							       <li class="span3"><a href=""><img src="http://farm1.staticflickr.com/183/363695635_5621ff0da4.jpg" /></a></li>
 							      </ul>
-							    </div> 
+							    </div>
 							<!-- html utilizado para la galería -->
                             <div class="col-sm-12 especial">
                                 <p style="float:right;" class="p-art">
@@ -78,7 +78,7 @@
                     <h1 style="text-align:left;">Contenido relacionados</h1>
                 </header>
             </article>
-            
+
             <!-- row 4 -->
         </div>
         <div class="carritoproductos clearfix">
@@ -99,13 +99,13 @@
                     var short_text = whole_text.substring(0, 300);
                     while(short_text.charAt(short_text.length - 1) != " "){
                         short_text = short_text.substring(0, short_text.length - 1);
-                    }                    
+                    }
                     $(".p-art").text(short_text);
                     show_more_button.text("Ver más...");
                 }else if(show_more_button.text() == "Ver más..."){
                     $(".p-art").text(whole_text);
                     show_more_button.text("Ver menos...");
-                }    
+                }
             });
         });
     </script>

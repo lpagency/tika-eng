@@ -16,40 +16,25 @@
 
 
 {% block javascript %}
-<script type="text/javascript" src="{{ site_base }}/static/js/tika_tag_group.js"></script>
-<script src="{{ site_base }}/static/js/detalle-producto.js"></script>
+<script type="text/javascript" src="{{ site_base }}/{{ nocache_static }}/js/tika_tag_group.js"></script>
+<script src="{{ site_base }}/{{ nocache_static }}/js/detalle-producto.js"></script>
 <script type="text/javascript" src="https://cdn.loadingplay.com/js/connect/1.0.0/bodegas.client.es5.js"></script>
 
 <script src="https://maps.googleapis.com/maps/api/js"></script>
 <script type="text/javascript">
 
 
-    var base_url = 'https://apibodegas.loadingplay.com/',
-    checkout_url = 'https://pay.loadingplay.com/';
-    var app_public = 'tika2';
-
-    function isLocalHost() {
-        return document.location.href.indexOf('localhost') != -1;
-    }
-
-    function isDevelopment() {
-        return document.location.href.indexOf('ondev.today') != -1;
-    }
-
-    // configure for each enviroment
-    if ( isLocalHost() )
-    {
-        // base_url = 'https://apibodegas.ondev.today/';
-        // checkout_url = 'https://pay.loadingplay.com/';
-        // app_public= 15;
-    }
-    else if ( isDevelopment() )
-    {
-        base_url = 'https://apibodegas.loadingplay.com/';
-        checkout_url = 'http://betapay.loadingplay.com/';
-        app_public = 'tika2';
-    }
-
+    var base_url = $.environmentVar(
+        "https://apibodegas.loadingplay.com/",
+        "https://apibodegas.loadingplay.com/",
+        "https://apibodegas.loadingplay.com/"
+    );
+    var checkout_url = $.environmentVar(
+        'https://pay.loadingplay.com/',
+        'https://pay.loadingplay.com/',
+        'https://pay.loadingplay.com/'
+    );
+    var app_public = $.environmentVar('tika','tika','tika');
 
     var related = function(tag){
         var config = {
@@ -87,18 +72,49 @@
 
 </script>
 
+<script type="text/javascript">
+    $(document).ready(function()
+    {
+        $(document).on("click", ".anchorLink", function(e) {
+            e.preventDefault();
+
+            elementClick = $(this).attr("href");
+            console.log(elementClick);
+            destination = $(elementClick).offset().top;
+            console.log(destination);
+            $("html:not(:animated),body:not(:animated)").animate({
+                scrollTop: destination
+            },800);
+            return false;
+        });
+    });
+</script>
+
 <script type="text/template" id="product_detail">
 
-    <div class="width-banner" >
-        <img id="{{ site.name }}_banner_detalle-prod" src="{{! images[4]['thumb_1'] }}" onload="this.onload='';this.src='{{! images[4]['thumb_500'] }}'" class="fondo-banner" alt="item" style="position:relative;">
+    <div class="width-banner hidden-xs" >
+        <img id="{{ site.name }}_banner_detalle-prod" src="{{! images[4]['thumb_1'] }}" onload="this.onload='';this.src='{{! images[4]['url'] }}'" class="fondo-banner" alt="item" style="position:relative;">
     </div>
 
-    <section class="buy-bg space50" style="color:#fff;">
+     <div class="col-md-12">
+   <div align="center">
+     <a href="#first-page-scroll" class="anchorLink">
+       <div class="contenedor-circulo">
+         <div  class="circulo-bajada" >
+          <i class="fa fa-chevron-circle-down"  aria-hidden="true"></i>
+        </div>
+
+      </div>
+    </a>
+  </div>
+</div>
+
+    <section id="first-page-scroll" class="buy-bg space50" style="color:#fff;">
         <div class="container">
             <div class="row">
                 <div class="col-md-5">
 
-                    <img src="{{! images[5]['thumb_1'] }}" onload="this.onload='';this.src='{{! images[5]['thumb_500'] }}'" class="img-responsive img-descrip" alt="item">
+                    <img src="{{! images[5]['thumb_1'] }}" onload="this.onload='';this.src='{{! images[5]['url'] }}'" class="img-responsive img-descrip" alt="item">
                 </div>
                 <div class="col-md-7 text-descrip desc-prod">
                     <h2 class="name-prod space75">{{! name }}
@@ -106,12 +122,12 @@
                     {{! bullet_1 }}
                     </h2>
                     <p class="desc-prod"><div>{{! description }}</div></p>
-                    <img class="col-sm-12 col-xs-12 img-nutric" src="{{! images[1]['thumb_1'] }}" onload="this.onload='';this.src='{{! images[1]['thumb_500'] }}'">
-                    <img class="col-sm-12 col-xs-12 img-nutric" src="{{! images[2]['thumb_1'] }}" onload="this.onload='';this.src='{{! images[2]['thumb_500'] }}'">
+                    <img class="col-sm-12 col-xs-12 img-nutric" src="{{! images[1]['thumb_1'] }}" onload="this.onload='';this.src='{{! images[1]['url'] }}'">
+                    <img class="col-sm-12 col-xs-12 img-nutric" src="{{! images[2]['thumb_1'] }}" onload="this.onload='';this.src='{{! images[2]['url'] }}'">
                     <div class="col-sm-12 space70">
-                        <button type="button" class="btn btn-default btn-nutr" data-toggle="modal" data-target="#myModal">nutrition facts</button>
+                        <button type="button" class="btn btn-default btn-nutr" data-toggle="modal" data-target="#myModal">Información Nutricional</button>
                         <!-- <button type="button" class="btn btn-default btn-compr">Donde Comprar</button> -->
-                        <a href="{{ site_base }}/donde_comprar" class="btn btn-default btn-compr" role="button">where to buy</a>
+                        <a href="{{ site_base }}/donde_comprar" class="btn btn-default btn-compr" role="button">Dónde comprar</a>
                     </div>
                 </div>
             </div>
@@ -126,7 +142,7 @@
                     <h4 class="modal-title ">Información nutricional</h4>
                 </div>
                 <div class="modal-body">
-                    <img class="col-sm-12 img-modal" src="{{! images[3]['thumb_1'] }}" onload="this.onload='';this.src='{{! images[3]['thumb_500'] }}'">
+                    <img class="col-sm-12 img-modal" src="{{! images[3]['thumb_1'] }}" onload="this.onload='';this.src='{{! images[3]['url'] }}'">
                 </div>
             </div>
 

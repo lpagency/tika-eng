@@ -165,4 +165,14 @@ body{
       font-size: 35px;
       position: relative;
       top: 5px;
+    }
+
+/*    .overlay {
+    background:transparent; 
+    position:relative; 
+    width:640px;
+    height:480px; 
+    top:-600px; 
+    margin-top:-480px;
+    }*/
 }
