@@ -65,5 +65,5 @@ $(document).ready(function()
     
     //tika_mini_rice_pop
     config.tag = 'tika_mini_rice_pop';
-    $('.tika-cereal-salvaje').ecommerce('product_box', config);
+    $('.tika-mini-rice-pop').ecommerce('product_box', config);
 });
